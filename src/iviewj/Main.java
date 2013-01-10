@@ -11,7 +11,8 @@ public class Main {
     public static void main(String[] args) throws OperationsException {
         // TODO code application logic here
         System.out.println("aaa");
-        Run(new MaxSum());
+        // Run(new MaxSum());
+        Run(new LongestCommonSubsequence());
         //TNode.test();
     }
 
