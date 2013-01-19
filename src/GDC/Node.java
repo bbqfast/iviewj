@@ -1,14 +1,16 @@
 package GDC;
+import java.lang.*;
 
 public class Node
     {
             public Node next;
-            public int data;
+            public Integer data;
     public Node()
     {
+        Integer[] xx = {0,1,2};
     }
 
-    public Node(int _data)
+    public Node(Integer _data)
     {
         data = _data;
     }
