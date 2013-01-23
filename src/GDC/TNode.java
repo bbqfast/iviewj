@@ -2,7 +2,7 @@ package GDC;
 
 public class TNode
 {
-    public int Data;
+    public Integer Data;
     public TNode left;
     public TNode right;
 

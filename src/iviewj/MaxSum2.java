@@ -1,7 +1,6 @@
 package iviewj;
 public class MaxSum2 extends MaxSum
 {
-    @Override
     public int FindMaxSum(int[] a)
     {
         int t=0;

@@ -12,7 +12,15 @@ public class Main {
         // TODO code application logic here
         System.out.println("aaa");
         // Run(new MaxSum());
-        Run(new LongestCommonSubsequence());
+        // Run(new LongestCommonSubsequence());
+        // Run(new RevLinkList());
+        // Run(new TicTacToe());
+        // Run(new PermutationSimple2());
+        // Run(new Heap());
+        // Run(new SortLinkList())
+        // Run(new Atoi());
+        // Run(new BinarySearch());
+        Run(new RebuildTree());
         //TNode.test();
     }
 

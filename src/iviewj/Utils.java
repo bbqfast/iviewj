@@ -16,7 +16,7 @@ public class Utils
     {
     }
     
-    public static Node ArrayToLinkList(int[] elements)
+    public static Node ArrayToLinkList(Integer[] elements)
     {
         Node prev = new Node();
         Node head = prev;
@@ -35,7 +35,7 @@ public class Utils
 
     public static Integer[] LinkListToArray(Node n)
     {
-        List<Integer> a = new ArrayList<Integer>();
+        ArrayList<Integer> a = new ArrayList<Integer>();
 
         // IntArray a = new IntArray();
         for (Node c = n; c != null; c = c.next)
@@ -43,7 +43,9 @@ public class Utils
             a.add(c.data);
         }
 
-        return (Integer[])a.toArray();
+        Integer []intarray = new Integer[a.size()];
+        a.toArray(intarray);
+        return intarray;
     }
 
     public static boolean MatchArray(Integer[] a, Integer[] b)
@@ -77,7 +79,7 @@ public class Utils
     }
 
 
-    public static String PrintArray(String desc, int[] a)
+    public static String PrintArray(String desc, Integer[] a)
     {
         StringBuilder buf = new StringBuilder();
         buf.append(desc + " ");

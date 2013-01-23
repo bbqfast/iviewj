@@ -41,6 +41,19 @@ public class TestBase {
         }
     }
 
+    public void Verify(String desc, Integer[] expect, Integer[] actual)
+    {
+        //w(desc + "Expected=" + expect + " Actual=" + actual);
+        if (Utils.MatchArray(expect, actual))
+        {
+            Pass();
+        }
+        else
+        {
+            Fail();
+        }
+    }
+    
     public void Verify(String desc, int expect, int actual)
     {
         w(desc + "Expected=" + expect + " Actual=" + actual);
