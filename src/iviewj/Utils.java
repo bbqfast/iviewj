@@ -15,7 +15,21 @@ public class Utils
     public Utils()
     {
     }
-    
+
+    public static void Swap(Integer []a, int i, int j)
+    {
+        Integer t = a[i];
+        a[i] = a[j];
+        a[j] = t;
+    }
+
+    public static void Swap(String []a, int i, int j)
+    {
+        String t = a[i];
+        a[i] = a[j];
+        a[j] = t;
+    }
+
     public static Node ArrayToLinkList(Integer[] elements)
     {
         Node prev = new Node();
@@ -60,6 +74,36 @@ public class Utils
             for (int i = 0; i < a.length; i++)
             {
                 if (a[i] != b[i])
+                {
+                    match = match && false;
+                    astr.append("{" + a[i] + "}" + ",");
+                    bstr.append("{" + b[i] + "}" + ",");
+                }
+                else
+                {
+                    astr.append(a[i] + ",");
+                    bstr.append(b[i] + ",");
+                }
+            }
+        }
+
+        w("a:" + astr.toString());
+        w("b:" + bstr.toString());
+        return match;
+    }
+
+    public static boolean MatchArray(String[] a, String[] b)
+    {
+        boolean match = true;
+        StringBuilder astr = new StringBuilder();
+        StringBuilder bstr = new StringBuilder();
+        if (a.length != b.length)
+            return false;
+        else
+        {
+            for (int i = 0; i < a.length; i++)
+            {
+                if ( !a[i].equals(b[i]) )
                 {
                     match = match && false;
                     astr.append("{" + a[i] + "}" + ",");

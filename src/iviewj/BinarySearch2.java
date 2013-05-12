@@ -1,8 +1,8 @@
 package iviewj;
 
-public class BinarySearch extends TestBase
+public class BinarySearch2 extends BinarySearch
 {
-    protected void TestInput(Integer[] input, int find, int expected)
+    protected void TestInput2222(Integer[] input, int find, int expected)
     {
         w(Utils.PrintArray("Input:",input));
         w(" Search for " + find);
@@ -13,7 +13,7 @@ public class BinarySearch extends TestBase
         Verify("Found position", expected, pos);
     }
 
-    public void Test1()
+    public void Test1111()
     {
         Integer[]a = new Integer[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         TestInput(a, 8, 7);
@@ -27,20 +27,20 @@ public class BinarySearch extends TestBase
         TestInput(b, 4, 3);
     }
 
-    public int Search(Integer[] a, Integer p)
+    public int Search(Integer[] a, Integer d)
     {
-        Integer s = 0;
-        Integer e = a[a.length - 1];
-        Integer m = s;
-        while (s <= e)
+        Integer s=0, e = a.length -1 , m = 0;
+        // make sure test with edge cases such as element found at the edge, borders
+        // should be s <= e because it failed at looking for 4 in 4 array
+        while (s < e)
         {
-            m = s + ((e - s) / 2);
-            if (a[m] == p)
+            m = (s + e ) / 2;
+            if (a[m] == d)
                 return m;
-            if (p < a[m])
-                e = m;
-            else
-                s = m;
+            if ( d < a[m])
+                e = m - 1;
+            else if (d > a[m])
+                s = m + 1;
         }
         return -1;
     }

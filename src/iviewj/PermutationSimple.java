@@ -78,24 +78,3 @@ public class PermutationSimple extends TestBase
     }
 }
 
-public class PermutationSimple2 : PermutationSimple
-{
-    public override void Permute(string _str)
-    {
-            char[] str = _str.ToCharArray();
-            doPermute(ref str, 0);
-    }
-
-    public void doPermute(ref char[] a, int s)
-    {
-            if (a.Length == s)
-                    w("[" + new string(a) + "]");
-
-            for (int i = s; i < a.Length; i++)
-            {
-                    swap(ref a[s], ref a[i]);
-                    doPermute(ref a, s + 1);
-                    swap(ref a[s], ref a[i]);
-            }
-    }
-}

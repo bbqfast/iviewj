@@ -3,6 +3,7 @@ package iviewj;
 
 public class PermutationSimple2 extends  PermutationSimple
 {
+    @Override
     public void Permute(String _str)
     {
             char[] str = _str.toCharArray();

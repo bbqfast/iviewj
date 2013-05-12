@@ -104,6 +104,8 @@ public class SortLinkList extends TestBase
             //					Console.WriteLine("R="+right.ToString());
             //				Console.WriteLine(head.next.ToString());
         }
+
+        // mistake:  returning head instead of head.next
         return head.next;
     }
 
@@ -114,10 +116,12 @@ public class SortLinkList extends TestBase
         inputList[0] = Utils.ArrayToLinkList(input);
         Sort(inputList);
         Integer[] result = Utils.LinkListToArray(inputList[0]);
+        w(Utils.PrintArray("result", result));
 
         Verify("Match", result, expected);
     }
 
+    @Override
     public void Test1()
     {
         TestInput(new Integer[] { 101, 1, 17, 14, 10, 99, 8, 6, 9, 2, 21 },
