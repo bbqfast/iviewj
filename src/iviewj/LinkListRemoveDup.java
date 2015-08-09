@@ -2,7 +2,11 @@ package iviewj;
 import GDC.*;
 
 public class LinkListRemoveDup extends TestBase {
-
+    public LinkListRemoveDup(IVerifier v)
+    {
+      super(v);
+    }
+    
     public void RemoveDup(Node head) {
         if (head == null) {
             return;

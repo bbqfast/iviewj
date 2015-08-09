@@ -1,8 +1,11 @@
 package iviewj;
 public class Heap2 extends Heap
 {
-    // mistake:  walk thru code statement by statement
-//    @Override
+    public Heap2(IVerifier v)
+    {
+      super(v);
+    }
+  
     public void Insert2(Integer x)
     {
         last ++ ;

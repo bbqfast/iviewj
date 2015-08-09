@@ -6,6 +6,11 @@ import GDC.*;
 
     public class Sorting extends TestBase
     {
+    public Sorting(IVerifier v)
+    {
+      super(v);
+    }
+    
         public void Sort(Integer []a)
         {
             int min;

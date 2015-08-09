@@ -2,19 +2,20 @@ package iviewj;
 
 public class TicTacToe extends  TestBase
 {
-    public Integer[][]tttboard = new Integer[3][3];
-
-    // pick a number such that we can tell by just summing up
-    public TicTacToe()
+    public TicTacToe(IVerifier v)
     {
+      super(v);
         for (int r = 0; r < 3; r++)
         {
             for (int c = 0; c < 3; c++)
             {
                 tttboard[r][c] = -99;
             }
-        }
+        }      
     }
+    
+    public Integer[][]tttboard = new Integer[3][3];
+    // pick a number such that we can tell by just summing up
 
     public int Move(int r, int c, int piece)
     {
@@ -98,13 +99,13 @@ public class TicTacToe extends  TestBase
 
     public void Test1()
     {
-        TicTacToe ttt = new TicTacToe();
+        TicTacToe ttt = new TicTacToe(verifier);
         ttt.Move(0, 0, 1);
         ttt.Move(1, 0, 1);
         ttt.Move(2, 0, 1);
         ttt.PrintBoard();
 
-        ttt = new TicTacToe();
+        ttt = new TicTacToe(verifier);
         ttt.Move(0, 0, 0);
         ttt.Move(1, 0, 0);
         ttt.Move(2, 0, 0);

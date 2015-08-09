@@ -3,6 +3,11 @@ import GDC.*;
 
 public class RevLinkList2 extends RevLinkList
     {
+    public RevLinkList2(IVerifier v)
+    {
+      super(v);
+    }
+    
     // use of 3 variable
     // cursor
     // last - remember last node when cursor advance

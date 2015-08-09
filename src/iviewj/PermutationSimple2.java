@@ -3,6 +3,11 @@ package iviewj;
 
 public class PermutationSimple2 extends  PermutationSimple
 {
+    public PermutationSimple2(IVerifier v)
+    {
+      super(v);
+    }
+    
     @Override
     public void Permute(String _str)
     {

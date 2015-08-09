@@ -2,11 +2,16 @@ package iviewj;
 
 public class MaxSum extends TestBase
 {
+    public MaxSum(IVerifier v)
+    {
+      super(v);
+    }
+  
     public void TestInput(Integer []a, int expected)
     {
         w("FindMaxSum:" + Utils.PrintArray("", a));
         int max = FindMaxSum(a);
-        Verify("FindMaxSum: ", expected, max);
+          verifier.Verify("FindMaxSum: ", expected, max);
     }
 
     public int FindMaxSum(Integer[] a)

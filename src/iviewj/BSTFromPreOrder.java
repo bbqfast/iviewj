@@ -6,6 +6,11 @@ import GDC.*;
 
 public class BSTFromPreOrder extends TestBase
 {
+    public BSTFromPreOrder(IVerifier v)
+    {
+      super(v);
+    }
+    
     TNode constructTreeUtil (int pre[], int[] preIndex, int low, int high, int size)
     {
         // Base case
@@ -46,7 +51,7 @@ public class BSTFromPreOrder extends TestBase
     {
         int[] preArr = { 4, 2, 1, 3, 8, 6, 5, 7, 9 };
         int[] inArr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        RebuildTree rt = new RebuildTree();
+        RebuildTree rt = new RebuildTree(verifier);
         TNode root = rt.Rebuild(preArr, 0, preArr.length - 1, inArr, 0, inArr.length - 1);
         
             // Verify("countBits", expected, cnt);

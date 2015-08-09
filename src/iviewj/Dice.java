@@ -10,6 +10,10 @@ import java.util.Random;
 /// </summary>
 public class Dice extends TestBase
 {
+    public Dice(IVerifier v)
+    {
+      super(v);
+    }  
     int fullflag = 0;
 
     int[] count = new int[7];

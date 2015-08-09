@@ -2,6 +2,11 @@ package iviewj;
 
 public class BinarySearch2 extends BinarySearch
 {
+    public BinarySearch2(IVerifier v)
+    {
+      super(v);
+    }  
+  
     protected void TestInput2222(Integer[] input, int find, int expected)
     {
         w(Utils.PrintArray("Input:",input));

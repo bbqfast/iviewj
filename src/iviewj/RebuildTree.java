@@ -8,6 +8,11 @@ import GDC.*;
 // Rebuild the tree based on the 2 array, its not necessary a sorted binary tree
 public class RebuildTree extends TestBase
 {
+    public RebuildTree(IVerifier v)
+    {
+      super(v);
+    }
+    
     public TNode Rebuild(int []preArr, int pb, int pe, int []inArr, int ib, int ie)
     {
         int rootElem = preArr[pb];
@@ -72,7 +77,7 @@ public class RebuildTree extends TestBase
         int[] preArr = { 4, 2, 1, 3, 8, 6, 5, 7, 9 };
         int[] inArr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-        RebuildTree rt = new RebuildTree();
+        RebuildTree rt = new RebuildTree(this.verifier);
         TNode root = rt.Rebuild(preArr, 0, preArr.length - 1, inArr, 0, inArr.length - 1);
         rt.Inorder(root, "");
 

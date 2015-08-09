@@ -3,6 +3,11 @@ import GDC.*;
 
 public class StrStr extends TestBase
 {
+    public StrStr(IVerifier v)
+    {
+      super(v);
+    }
+    
     public int strstr(char[] a, char[] b)
     {
         for (int j=0;j < a.length; j++)

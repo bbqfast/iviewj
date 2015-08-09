@@ -1,6 +1,11 @@
 package iviewj;
 public class RevSentence extends TestBase
 {
+    public RevSentence(IVerifier v)
+    {
+      super(v);
+    }
+    
     public void RevStr(char[] a, int s, int e)
     {
         while (s < e)

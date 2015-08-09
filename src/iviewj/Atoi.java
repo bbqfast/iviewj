@@ -2,6 +2,11 @@ package iviewj;
 
 public class Atoi extends TestBase
 {
+    public Atoi(IVerifier v)
+    {
+      super(v);
+    }
+    
     public void TestInput(String a, int expected)
     {
         w("Atoi: a=" + a);

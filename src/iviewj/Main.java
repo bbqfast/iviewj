@@ -10,8 +10,9 @@ public class Main {
      */
     public static void main(String[] args) throws OperationsException {
         // TODO code application logic here
+        IVerifier v = new Verifier();
         System.out.println("aaa");
-        // Run(new MaxSum());
+        Run(new MaxSum(v));
         // Run(new LongestCommonSubsequence());
         // Run(new RevLinkList2());
         // Run(new TicTacToe());
@@ -21,7 +22,7 @@ public class Main {
         // Run(new Atoi2());
         // Run(new BinarySearch());
         // Run(new RebuildTree());
-        // Run(new A1a2a3_2());
+//        Run(new A1a2a3_2(v));
         // Run( new Sorting2());
         // Run( new TreeTraverseNoRecursion());
         // Run ( new BinarySearch2());
@@ -34,7 +35,7 @@ public class Main {
         // ReverseSentence rs = new ReverseSentence();
         // Run( new PermutationSimple2());
         // Run( new StrRemoveDups());
-        Run ( new StrReplaceInPlace());
+        // Run ( new StrReplaceInPlace());
         // rs.Test();
         //TNode.test();
     }

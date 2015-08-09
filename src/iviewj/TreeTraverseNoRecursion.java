@@ -6,6 +6,11 @@ import GDC.*;
 
 public class TreeTraverseNoRecursion extends TestBase
 {
+    public TreeTraverseNoRecursion(IVerifier v)
+    {
+      super(v);
+    }
+    
     public  void InorderStack(TNode []r)
     {
         NodeStack stk = new NodeStack();
@@ -156,7 +161,7 @@ public class TreeTraverseNoRecursion extends TestBase
         Utils.Insert(root, new Integer[] { 40, 20, 60, 10, 30, 35, 32, 50, 70} );
         Utils.PrintTree(root[0], "");
 
-        TreeTraverseNoRecursion ts = new TreeTraverseNoRecursion();
+        TreeTraverseNoRecursion ts = new TreeTraverseNoRecursion(verifier);
         // ts.InorderStack(ref root);
         // ts.PostorderStack(ref root);
         // ts.MorrisTraversal(ref root);

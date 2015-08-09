@@ -2,7 +2,11 @@ package iviewj;
 import GDC.*;
 
 public class LinkListRemoveDup2 extends LinkListRemoveDup {
-
+    public LinkListRemoveDup2(IVerifier v)
+    {
+      super(v);
+    }
+    
     @Override
     public void RemoveDup(Node head) {
         Node i = head;

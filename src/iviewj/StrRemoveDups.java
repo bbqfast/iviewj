@@ -6,6 +6,11 @@ import GDC.*;
 
 class StrRemoveDups extends TestBase
 {
+    public StrRemoveDups(IVerifier v)
+    {
+      super(v);
+    }
+    
     public void TestInput(String a, String expected)
     {
             w("Input: a=" + a);

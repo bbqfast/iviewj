@@ -5,6 +5,11 @@ import GDC.*;
 // then merge back
 public class SortLinkList extends TestBase
 {
+    public SortLinkList(IVerifier v)
+    {
+      super(v);
+    }
+    
     public void Sort(Node[] head)
     {
         Node sorted = SortInt(head[0]);

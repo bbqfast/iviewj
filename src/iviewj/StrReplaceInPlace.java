@@ -1,6 +1,11 @@
 package iviewj;
 public class StrReplaceInPlace extends TestBase
 {
+    public StrReplaceInPlace(IVerifier v)
+    {
+      super(v);
+    }
+    
     public void RevStr(char[] a, int s, int e)
     {
         while (s < e)

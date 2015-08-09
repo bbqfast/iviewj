@@ -6,6 +6,11 @@ import GDC.*;
 
     public class Sorting2 extends Sorting
     {
+    public Sorting2(IVerifier v)
+    {
+      super(v);
+    }
+    
         public void Sort(Integer []a)
         {
             for (Integer i=0; i < a.length; i++)

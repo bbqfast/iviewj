@@ -8,6 +8,11 @@ import GDC.*;
 /// </summary>
 public class A1a2a3 extends TestBase
 {
+    public A1a2a3(IVerifier v)
+    {
+      super(v);
+    }
+    
     public static void SwapByIndex(String []a, int i, int j)
     {
         String tmp = a[i];

@@ -6,6 +6,11 @@ import GDC.*;
 
 public class FindShiftedArray extends TestBase
     {
+    public FindShiftedArray(IVerifier v)
+    {
+      super(v);
+    }  
+  
         protected void TestInput(Integer[] input, Integer expected)
         {
             w(Utils.PrintArray("Input:", input));

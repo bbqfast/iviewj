@@ -1,6 +1,11 @@
 package iviewj;
 public class MaxSum2 extends MaxSum
 {
+    public MaxSum2(IVerifier v)
+    {
+      super(v);
+    }
+    
     public int FindMaxSum(int[] a)
     {
         int t=0;

@@ -5,6 +5,11 @@ import GDC.*;
 
 class BitCounting2 extends BitCounting
 {
+    public BitCounting2(IVerifier v)
+    {
+      super(v);
+    }  
+  
     public int countBits(int v)
     {
         int c=0;

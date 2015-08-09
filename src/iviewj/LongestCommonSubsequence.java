@@ -2,7 +2,11 @@ package iviewj;
 
     public class LongestCommonSubsequence extends TestBase
     {
-
+    public LongestCommonSubsequence(IVerifier v)
+    {
+      super(v);
+    }
+    
         public int makeTable(char[] a, char[] b, int[][] table) {
             // table = new int[a.length + 1][b.length + 1];
             for (int j = b.length - 1; j >= 0; j--) {

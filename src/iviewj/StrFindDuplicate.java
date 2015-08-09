@@ -1,6 +1,11 @@
 package iviewj;
 class StrFindDuplicate extends TestBase
 {
+    public StrFindDuplicate(IVerifier v)
+    {
+      super(v);
+    }
+    
     public void TestInput(String s, int expected)
     {
         w("Input = " + s);

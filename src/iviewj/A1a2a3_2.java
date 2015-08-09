@@ -8,7 +8,11 @@ import GDC.*;
 /// </summary>
 public class A1a2a3_2 extends A1a2a3
 {
-
+    public A1a2a3_2(IVerifier v)
+    {
+      super(v);
+    }
+    
     public void Arrange(String []a)
     {
         int half = a.length / 2;

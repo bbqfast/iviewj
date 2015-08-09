@@ -11,6 +11,10 @@ import GDC.*;
 /// </summary>
 public class LCA extends TestBase
 {
+    public LCA(IVerifier v)
+    {
+      super(v);
+    }  
     // propogate null if root never match p nor q
     public TNode LowestCommonAncestor(TNode root, int p, int q)
     {
@@ -47,7 +51,7 @@ public class LCA extends TestBase
     {
         int[] preArr = { 4, 2, 1, 3, 8, 6, 5, 7, 9 };
         int[] inArr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        RebuildTree rt = new RebuildTree();
+        RebuildTree rt = new RebuildTree(verifier);
         TNode root = rt.Rebuild(preArr, 0, preArr.length - 1, inArr, 0, inArr.length - 1);
 
         rt.Inorder(root, "");

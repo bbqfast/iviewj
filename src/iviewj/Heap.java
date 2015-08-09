@@ -5,11 +5,12 @@ public class Heap extends  TestBase
     protected Integer last = 0;
     protected Integer[] tr = new Integer[MAX];
 
-    public Heap()
+    public Heap(IVerifier v)
     {
-        Init();
+      super(v);
+      Init();
     }
-
+    
     public void Init()
     {
         for(int i=0;i<tr.length;i++)

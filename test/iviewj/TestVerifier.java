@@ -1,40 +1,13 @@
 package iviewj;
 
-import javax.management.OperationsException;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-/**
- *
- * @author alan.chung
- */
-public class TestBase {
-    protected boolean debug = false;
-    protected IVerifier verifier;
-
-    public TestBase(IVerifier verify)
-    {
-      this.verifier = verify;
-    }
-
-    public void w(String s)
-    {
-        System.out.println(s);
-    }
-
-    public void d(String s)
-    {
-        if (debug)
-            System.out.println(s);
-    }
-
-    public boolean RunTest() throws OperationsException
-    {
-        throw new OperationsException("No implementation");
-    }
-
-    public void Test1(){
-
-    }
-
+public class TestVerifier implements IVerifier {
     public void Verify(String desc, String  expect, String actual)
     {
         w(desc + "\nExpected=" + expect + "\nActual  =" + actual);
@@ -48,7 +21,7 @@ public class TestBase {
         }
     }
 
-    public void Verify(String desc, Integer[] expect, Integer[] actual)
+  public void Verify(String desc, Integer[] expect, Integer[] actual)
     {
         //w(desc + "Expected=" + expect + " Actual=" + actual);
         if (Utils.MatchArray(expect, actual))
@@ -78,13 +51,19 @@ public class TestBase {
     public void Pass()
     {
         w("----------------- PASS ------------------------");
+        assertTrue(true);
     }
 
     public void Fail()
     {
         w("***************** FAIL *****************");
+        assertTrue(false);
     }
 
-
-
+    public void w(String s)
+    {
+        System.out.println(s);
+    }
+  
+  
 }

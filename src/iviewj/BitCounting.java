@@ -5,6 +5,11 @@ import GDC.*;
 
 class BitCounting extends TestBase
 {
+    public BitCounting(IVerifier v)
+    {
+      super(v);
+    }
+    
         public void TestInput(int n, int expected)
         {
                 int cnt = countBits(n);

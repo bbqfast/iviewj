@@ -2,6 +2,11 @@ package iviewj;
 
 public class Atoi2 extends Atoi
 {
+    public Atoi2(IVerifier v)
+    {
+      super(v);
+    }
+    
     public int atoi(String ar)
     {
         int i=0;

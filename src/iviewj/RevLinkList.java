@@ -3,7 +3,12 @@ import GDC.*;
 
 public class RevLinkList extends TestBase
     {
-    // use of 3 variable
+    public RevLinkList(IVerifier v)
+    {
+      super(v);
+    }
+    
+  // use of 3 variable
     // cursor
     // last - remember last node when cursor advance
     // next - remember next node when cur.next is twisted to point to last

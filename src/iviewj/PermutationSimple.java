@@ -3,6 +3,11 @@ package iviewj;
 
 public class PermutationSimple extends TestBase
 {
+    public PermutationSimple(IVerifier v)
+    {
+      super(v);
+    }
+    
     protected void swap(char []a, char []b)
     {
             char t = a[0];
