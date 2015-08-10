@@ -1,121 +1,116 @@
 package iviewj;
-public class Heap extends  TestBase
-{
-    public static int MAX = 100;
-    protected Integer last = 0;
-    protected Integer[] tr = new Integer[MAX];
 
-    public Heap(IVerifier v)
-    {
-      super(v);
-      Init();
-    }
-    
-    public void Init()
-    {
-        for(int i=0;i<tr.length;i++)
-            tr[i] = -1;
-    }
+public class Heap extends TestBase {
 
-    public void Insert(Integer x)
-    {
-        last++;
-        tr[last] = x;
-        int cr  = last;
-        while (cr > 1 && tr[cr] < tr[cr / 2])
-        {
-            swap(tr, cr, cr / 2);
-            cr = cr / 2;
+  public static int MAX = 100;
+  protected Integer last = 0;
+  protected Integer[] tr = new Integer[MAX];
+
+  public Heap(IVerifier v) {
+    super(v);
+    Init();
+  }
+
+  public void Init() {
+    for (int i = 0; i < tr.length; i++) {
+      tr[i] = -1;
+    }
+  }
+
+  public void Insert(Integer x) {
+    last++;
+    tr[last] = x;
+    int cr = last;
+    while (cr > 1 && tr[cr] < tr[cr / 2]) {
+      swap(tr, cr, cr / 2);
+      cr = cr / 2;
+    }
+  }
+
+  public boolean Delete(int[] d) {
+    d[0] = -1;
+    if (last == 0) {
+      return false;
+    }
+    int cr = 1;
+    d[0] = tr[cr];
+
+    int lastidx = last;
+    int lastv = tr[last];
+    last--;
+    while (cr * 2 <= last) {
+      int child = cr * 2;
+
+      if (child != last) {
+        if (tr[child + 1] < tr[child]) {
+          child++;
         }
+      }
+
+      if (lastv > tr[child]) {
+        tr[cr] = tr[child];
+      } else {
+        break;
+      }
+
+      cr = child;
     }
+    tr[cr] = lastv;
 
-    public boolean Delete(int []d)
-    {
-        d[0] = -1;
-        if (last == 0)
-            return false;
-        int cr = 1;
-        d[0] = tr[cr];
+    return true;
+  }
 
-        int lastidx = last;
-        int lastv = tr[last];
-        last--;
-        while (cr * 2 <= last)
-        {
-            int child = cr * 2;
+  protected void swap(Integer[] a, int i, int j) {
+    Integer t = a[i];
+    a[i] = a[j];
+    a[j] = t;
+  }
 
-            if (child != last)
-                if (tr[child + 1] < tr[child])
-                    child++;
+  public void printHeap() {
+    Inorder(tr, 1, "");
+  }
 
-            if (lastv > tr[child])
-                tr[cr] = tr[child];
-            else break;
-
-            cr = child;
-        }
-        tr[cr] = lastv;
-
-
-        return true;
+  public void Inorder(Integer[] tr, int idx, String space) {
+    if (tr[idx] == -1) {
+      return;
     }
+    Inorder(tr, idx * 2, space + " ");
+    w(space + tr[idx]);
+    Inorder(tr, idx * 2 + 1, space + " ");
+  }
 
-    protected void swap(Integer []a, int i, int j)
-    {
-        Integer t = a[i];
-        a[i] = a[j];
-        a[j] = t;
+  public void BulkInsert(Integer[] insertList) {
+    for (int i = 0; i < insertList.length; i++) {
+      Insert(insertList[i]);
     }
+  }
 
-    public void printHeap()
-    {
-        Inorder(tr, 1, "");
+  public void BulkDelete(Integer[] toDelete, Integer[][] deleted) {
+    deleted[0] = new Integer[toDelete.length];
+    for (int i = 0; i < toDelete.length; i++) {
+      int[] del = new int[1];
+      this.Delete(del);
+      deleted[0][i] = del[0];
     }
+  }
 
-    public void Inorder(Integer []tr, int idx, String space)
-    {
-        if (tr[idx] == -1) return;
-        Inorder(tr , idx * 2 ,  space + " ");
-        w(space + tr[idx]);
-        Inorder(tr, idx * 2 + 1, space + " ");
-    }
+  protected void TestInput(Integer[] input, Integer[] expected) {
+    Init();
+    w(Utils.PrintArray("Input: ", input));
+    this.BulkInsert(input);
+    this.printHeap();
+    Integer[][] deleted = new Integer[1][1];
+    BulkDelete(input, deleted);
 
-    public void BulkInsert(Integer[] insertList)
-    {
-            for (int i=0;i < insertList.length; i++)
-                    Insert(insertList[i]);
-    }
+    verifier.Verify("Match", deleted[0], expected);
+  }
 
-    public void BulkDelete(Integer[] toDelete, Integer [][]deleted)
-    {
-        deleted[0] = new Integer[toDelete.length];
-        for (int i=0;i<toDelete.length;i++)
-        {
-            int []del = new int[1];
-            this.Delete(del);
-            deleted[0][i] = del[0];
-        }
-    }
-    protected void TestInput(Integer[] input, Integer[] expected)
-    {
-        Init();
-        w(Utils.PrintArray("Input: ", input));
-        this.BulkInsert(input);
-        this.printHeap();
-        Integer [][]deleted = new Integer[1][1];
-        BulkDelete(input, deleted);
-
-        verifier.Verify("Match", deleted[0], expected);
-    }
-
-    public void Test1()
-    {
-        TestInput(new Integer[] {3,2,4,7,9,1}, new Integer[] {1,2,3,4,7,9});
-        TestInput(new Integer[] {6,3,2,4,7,5,9,1,8}, new Integer[] {1,2,3,4,5,6,7,8,9});
-        TestInput(new Integer[] {3}, new Integer[] {3});
-    }
+  public void Test1() {
+    TestInput(new Integer[]{3, 2, 4, 7, 9, 1}, new Integer[]{1, 2, 3, 4, 7, 9});
+    TestInput(new Integer[]{6, 3, 2, 4, 7, 5, 9, 1, 8}, new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9});
+    TestInput(new Integer[]{3}, new Integer[]{3});
+  }
 }
-
 
 //        ElementType
 //        DeleteMin( PriorityQueue H )
