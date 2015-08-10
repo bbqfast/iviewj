@@ -10,7 +10,7 @@ class StrFindDuplicate extends TestBase
     {
         w("Input = " + s);
         int pos = findDup(s);
-        Verify("StrFindDuplicate", expected, pos);
+        verifier.Verify("StrFindDuplicate", expected, pos);
 
     }
     public int findDup(String str)

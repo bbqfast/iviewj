@@ -42,7 +42,7 @@ import GDC.*;
             // Sorting sorter = new Sorting();
             Sort(input);
 
-            Verify("Match", input, expected);
+            verifier.Verify("Match", input, expected);
         }
 
         @Override

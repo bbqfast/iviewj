@@ -100,7 +100,7 @@ package iviewj;
             String []subseq = new String[1];;
             int dist = LCS(a.toCharArray(), b.toCharArray(), /* out */subseq);
             w("Subsequence =" + subseq[0]);
-            Verify("Subsequence Length:", expect, dist);
+            verifier.Verify("Subsequence Length:", expect, dist);
         }
 
         public void Test1()

@@ -105,7 +105,7 @@ public class Heap extends  TestBase
         Integer [][]deleted = new Integer[1][1];
         BulkDelete(input, deleted);
 
-        Verify("Match", deleted[0], expected);
+        verifier.Verify("Match", deleted[0], expected);
     }
 
     public void Test1()

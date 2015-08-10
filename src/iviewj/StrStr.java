@@ -26,7 +26,7 @@ public class StrStr extends TestBase
     protected void TestInput(String a, String b, int expectedPos)
     {
         int pos = strstr(a.toCharArray(), b.toCharArray());
-        Verify("position found", expectedPos, pos);
+        verifier.Verify("position found", expectedPos, pos);
     }
 
     @Override

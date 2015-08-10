@@ -106,7 +106,7 @@ public class StrReplaceInPlace extends TestBase
         // Replace(input, find.toCharArray(), repl.toCharArray(), len);
         w("input=   " + inputStr);
         Replace2(input, find.toCharArray(), repl.toCharArray(), 0, inputStr.length() - 1 );
-        Verify("position found", expected, new String(input) );
+        verifier.Verify("position found", expected, new String(input) );
     }
 
     public void Test1()

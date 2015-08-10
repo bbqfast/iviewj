@@ -13,7 +13,7 @@ class BitCounting extends TestBase
         public void TestInput(int n, int expected)
         {
                 int cnt = countBits(n);
-                Verify("countBits", expected, cnt);
+                verifier.Verify("countBits", expected, cnt);
 
         }
         public int countBits(int n)

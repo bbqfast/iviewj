@@ -32,7 +32,7 @@ public class RevLinkList extends TestBase
         Node head = Utils.ArrayToLinkList(input);
         Node Reversed = this.Reverse(head);
         Integer[] reversed = Utils.LinkListToArray(Reversed);
-        Verify("Reversed List", expected, reversed);
+        verifier.Verify("Reversed List", expected, reversed);
     }
 
     public void Test1()

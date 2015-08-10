@@ -15,7 +15,7 @@ public class BinarySearch2 extends BinarySearch
         int pos;
         pos = Search(input, find);
 
-        Verify("Found position", expected, pos);
+        verifier.Verify("Found position", expected, pos);
     }
 
     public void Test1111()

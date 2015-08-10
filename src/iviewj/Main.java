@@ -13,8 +13,8 @@ public class Main {
         IVerifier v = new Verifier();
         System.out.println("aaa");
         Run(new MaxSum(v));
-        // Run(new LongestCommonSubsequence());
-        // Run(new RevLinkList2());
+        Run(new LongestCommonSubsequence(v));
+        Run(new RevLinkList2(v));
         // Run(new TicTacToe());
         // Run(new PermutationSimple2());
         // Run(new Heap());

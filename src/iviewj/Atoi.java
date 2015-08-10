@@ -11,7 +11,7 @@ public class Atoi extends TestBase
     {
         w("Atoi: a=" + a);
         int num = atoi(a);
-        Verify("Atoi: ", expected, num);
+        verifier.Verify("Atoi: ", expected, num);
     }
 
     public int atoi(String ar)

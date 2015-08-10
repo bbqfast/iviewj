@@ -18,7 +18,7 @@ public class FindShiftedArray extends TestBase
             int pos;
             pos = FindShifted(input);
 
-            Verify("FindShifted", expected, pos);
+            verifier.Verify("FindShifted", expected, pos);
         }
 
         // bug with input int[] input = { 7, 1, 2, 3, 4, 5, 6 };

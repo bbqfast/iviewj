@@ -40,7 +40,7 @@ public class RevSentence extends TestBase
     {
         char a[] = input.toCharArray();
         RevSentence(a);
-        Verify("position found", expected, new String(a) );
+        verifier.Verify("position found", expected, new String(a) );
     }
 
     public void Test1()

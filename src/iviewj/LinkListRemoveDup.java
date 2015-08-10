@@ -40,7 +40,7 @@ public class LinkListRemoveDup extends TestBase {
         Integer[] result = Utils.LinkListToArray(inputList[0]);
         w(Utils.PrintArray("result", result));
 
-        Verify("Match", result, expected);
+        verifier.Verify("Match", result, expected);
     }
 
 

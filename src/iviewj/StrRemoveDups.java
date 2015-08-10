@@ -16,7 +16,7 @@ class StrRemoveDups extends TestBase
             w("Input: a=" + a);
             char[] abuff = a.toCharArray();
             removeDups(abuff);
-            Verify("removeDups: ", expected, new String(abuff));
+            verifier.Verify("removeDups: ", expected, new String(abuff));
     }
 
     public void removeDups(char[] str)
