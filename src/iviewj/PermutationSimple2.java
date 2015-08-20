@@ -1,15 +1,19 @@
 package iviewj;
 
-public class PermutationSimple2 extends PermutationSimple {
+import java.util.ArrayList;
+import java.util.List;
+
+public class PermutationSimple2 extends Permutation {
 
   public PermutationSimple2(IVerifier v) {
     super(v);
   }
 
   @Override
-  public void Permute(String _str) {
+  public List<String> Permute(String _str) {
     char[] str = _str.toCharArray();
     doPermute(str, 0);
+    return new ArrayList<String>();
   }
 
   public void doPermute(char[] a, int s) {

@@ -1,5 +1,7 @@
 package iviewj;
 
+import java.util.List;
+
 public interface IVerifier {
 
   void Verify(String desc, String expect, String actual);
@@ -7,4 +9,6 @@ public interface IVerifier {
   void Verify(String desc, Integer[] expect, Integer[] actual);
 
   void Verify(String desc, int expect, int actual);
+  
+  void Verify(String desc, List<String> expected, List<String> actual);
 }

@@ -1,11 +1,20 @@
 package iviewj;
 
-public class PermutationSimple extends TestBase {
+import java.util.ArrayList;
+import java.util.List;
 
-  public PermutationSimple(IVerifier v) {
+public class Permutation extends TestBase {
+
+  public Permutation(IVerifier v) {
     super(v);
   }
 
+  public void TestInput(String a, List<String> expected) {
+    w("Permute:" + a);
+    List<String> actual = Permute(a);
+    verifier.Verify("Permute: ", expected, actual);
+  }  
+  
   protected void swap(char[] a, char[] b) {
     char t = a[0];
     a[0] = b[0];
@@ -40,13 +49,15 @@ public class PermutationSimple extends TestBase {
   // the do the same recursively to the rest of the string to permute it
   // the most base case is swapping 2 create a proper permutation
   // entry point
-  public void Permute(String _str) // best
+  public List<String> Permute(String _str) // best
   {
     char[] str = _str.toCharArray();
-    doPermute(str, _str.length(), 0); // depth starts with 0
+    List<String> outputs = new ArrayList<String>();
+    doPermute(str, _str.length(), 0, outputs); // depth starts with 0
+    return outputs;
   }
 
-  public void doPermute(char[] str, int n, int depth) // best
+  public void doPermute(char[] str, int n, int depth, List<String> outputs ) // best
   {
     // when n = 1, loop skips which is base case
     for (int i = 0; i <= n - 1; i++) // <= n - 1 is last idx (aka. < n or < len)
@@ -55,8 +66,8 @@ public class PermutationSimple extends TestBase {
       // however we still need to be in the loop because we don't print at this level, thus we still need to hit the print statement
 
       swap(str, i, n - 1); // swap first last
-      print(depth, str);
-      doPermute(str, n - 1, depth + 1); // recursively, shorten input str by 1
+      print(depth, str); // DEBUG
+      doPermute(str, n - 1, depth + 1, outputs); // recursively, shorten input str by 1
       swap(str, i, n - 1);
     }
 
@@ -64,6 +75,7 @@ public class PermutationSimple extends TestBase {
     if (1 == n) {
       String x = new String(str);
       w("[" + x + "]");
+      outputs.add(x);
     }
   }
 
