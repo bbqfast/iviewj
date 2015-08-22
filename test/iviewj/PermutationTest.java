@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package iviewj;
 
 import java.util.ArrayList;
@@ -16,28 +11,17 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author dev
- */
 public class PermutationTest {
-  Permutation permute;
+  Permutation2 permute;
           
   public PermutationTest() {
   }
   
   @Before
   public void setUp() {
-    permute = new Permutation(new TestVerifier());
+    permute = new Permutation2(new TestVerifier());
   }
   
-  @After
-  public void tearDown() {
-  }
-
-   /**
-   * Test of Permute method, of class Permutation.
-   */
   @Test
   public void testPermute() {
     System.out.println(getMethodName(2));
@@ -55,18 +39,6 @@ public class PermutationTest {
         System.out.println("failed");
       }
     }
-  }
-  
-  /**
-   * Test of Test1 method, of class Permutation.
-   */
-  @Test
-  public void testTest1() {
-    System.out.println("Test1");
-    Permutation instance = null;
-    instance.Test1();
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
   }
  
   public static String getMethodName(final int depth)
