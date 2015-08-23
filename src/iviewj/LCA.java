@@ -46,13 +46,23 @@ public class LCA extends TestBase {
       }
     }
   }
-
-  public void Test1() {
-    int[] preArr = {4, 2, 1, 3, 8, 6, 5, 7, 9};
-    int[] inArr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+  
+  protected void TestInput(int[] inArr, int[] preArr, int left, int right, int expected) {
     RebuildTree rt = new RebuildTree(verifier);
     TNode root = rt.Rebuild(preArr, 0, preArr.length - 1, inArr, 0, inArr.length - 1);
-
     rt.Inorder(root, "");
+
+    TNode actual = LowestCommonAncestor(root, left, right);
+    int data = actual == null ? -1: actual.Data;
+    verifier.Verify("", expected, data);
+  }  
+
+  public void Test1() {
+    int[] inArr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int[] preArr = {4, 2, 1, 3, 8, 6, 5, 7, 9};
+    TestInput(inArr, preArr, 1, 3, 2);
+    TestInput(inArr, preArr, 1, 9, 4);
+    TestInput(inArr, preArr, 5, 9, 8);
+    TestInput(inArr, preArr, 2, 8, 4);
   }
 }
