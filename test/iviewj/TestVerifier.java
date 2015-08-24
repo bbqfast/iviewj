@@ -7,6 +7,8 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import GDC.*;
+import GDC.TNode;
 import static org.junit.Assert.*;
 
 public class TestVerifier implements IVerifier {
@@ -62,6 +64,15 @@ public class TestVerifier implements IVerifier {
         }
       }
       Pass();
+    }
+    
+    public void Verify(String desc, TNode expected, TNode actual)
+    {
+      w(desc);
+      if (expected.compare(expected, actual))
+        Pass();
+      else
+        Fail();
     }      
 
     public void Pass()

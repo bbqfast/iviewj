@@ -1,5 +1,6 @@
 package iviewj;
 
+import GDC.TNode;
 import java.util.HashSet;
 import java.util.List;
 
@@ -31,21 +32,27 @@ public class Verifier implements IVerifier {
       Fail();
     }
   }
-  
-  public void Verify(String desc, List<String> expected, List<String> actual)
-  {
+
+  public void Verify(String desc, List<String> expected, List<String> actual) {
     w(desc);
-    
+
     HashSet<String> actualSet = new HashSet<String>(actual);
-    for (String x : expected)
-    {
-      if (! actualSet.contains(x))
-      {
+    for (String x : expected) {
+      if (!actualSet.contains(x)) {
         Fail();
       }
     }
     Pass();
-  }  
+  }
+
+  public void Verify(String desc, TNode expected, TNode actual) {
+    w(desc);
+    if (expected.compare(expected, actual)) {
+      Pass();
+    } else {
+      Fail();
+    }
+  }
 
   public void Pass() {
     w("----------------- PASS ------------------------");
