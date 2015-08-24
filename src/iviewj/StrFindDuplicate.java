@@ -1,5 +1,8 @@
 package iviewj;
 
+// use a bitmap to represent character set
+// first locate the slot, then mod 8 to determine the bit slot
+// if bit already set, means a duplicate is found
 class StrFindDuplicate extends TestBase {
 
   public StrFindDuplicate(IVerifier v) {
@@ -18,7 +21,7 @@ class StrFindDuplicate extends TestBase {
     byte[] field = new byte[32];
     for (int i = 0; i < s.length; i++) {
 
-            // becaure with AND operation,
+      // becaure with AND operation,
       // the result of AND is not neccesary 1 or 0, thus we take the inversion
       if ((field[s[i] / 8] & (1 << (s[i] % 8))) != 0) {
         return i;
@@ -35,6 +38,6 @@ class StrFindDuplicate extends TestBase {
     TestInput("hapy", -1);
     TestInput("z123456789z", 10);
     TestInput("xx", 1);
-    TestInput("abdsafioewroiwfsafd", -1);
+    TestInput("abdsafioewroiwfsafd", 4);
   }
 }

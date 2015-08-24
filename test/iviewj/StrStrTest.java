@@ -8,14 +8,14 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class StrStrTest {
-  StrStr strstr;
+  StrStr2 strstr;
   
   public StrStrTest() {
   }
  
   @Before
   public void setUp() {
-    strstr = new StrStr(new TestVerifier());
+    strstr = new StrStr2(new TestVerifier());
   }
 
   @Test
