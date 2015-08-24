@@ -31,14 +31,6 @@ public class MaxSumTest {
   }
 
   @Test
-  public void test1() {
-    System.out.println(getMethodName(2));
-    Integer[] a = new Integer[] { 1,2,3,-10,4,1};
-    int expResult = 6;
-    maxsum.Test1();
-  }
-
-  @Test
   public void neg_in_btw() {
     System.out.println(getMethodName(2));
     Integer[] a = new Integer[] { 1,2,3,-10,4,1};
