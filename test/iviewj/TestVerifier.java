@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import GDC.*;
 import GDC.TNode;
+import java.awt.Point;
 import static org.junit.Assert.*;
 
 public class TestVerifier implements IVerifier {
@@ -67,6 +68,27 @@ public class TestVerifier implements IVerifier {
       }
       Pass();
     }
+    
+    public void Verify(String desc, Point[] expected, List<Point> actual)
+    {
+      w(desc);
+      boolean isFail = false;
+      
+      HashSet<Point> actualSet = new HashSet<Point>(actual);
+      for (Point p : expected) {
+        if (!actualSet.contains(p)) 
+          isFail = true;
+      }         
+
+      if (isFail)
+      {
+          w(Utils.PrintArray("actual", actualSet.toArray(new Point[actualSet.size()])));
+          w(Utils.PrintArray("expected", expected));
+          Fail();
+      }
+      else
+        Pass();
+    }    
     
     public void Verify(String desc, TNode expected, TNode actual)
     {

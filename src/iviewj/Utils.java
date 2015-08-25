@@ -5,6 +5,7 @@
 package iviewj;
 
 import GDC.*;
+import java.awt.Point;
 import java.util.*;
 
 /**
@@ -130,6 +131,16 @@ public class Utils {
     }
     return buf.toString();
   }
+  
+  public static String PrintArray(String desc, Point[] a) {
+    StringBuilder buf = new StringBuilder();
+    buf.append(desc + " ");
+    for (int i = 0; i < a.length; i++) {
+      String ps = "(" + a[i].x + "," + a[i].y + ")";
+      buf.append(ps  + ", ");
+    }
+    return buf.toString();
+  }  
 
   public static void PrintLinkList(Node n) {
     // f("PrintLinkList");
