@@ -9,7 +9,7 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses(value = {AtoiTest.class, BinarySearchTest.class, BitCountingTest.class, FindShiftedArrayTest.class, LCATest.class, LinkListRemoveDupTest.class, MaxSumTest.class,
-  PermutationTest.class, StrFindDuplicateTest.class, StrStrTest.class, BSTFromPreOrderTest.class})
+  PermutationTest.class, StrFindDuplicateTest.class, StrStrTest.class, BSTFromPreOrderTest.class, HeapTest.class})
 public class AllTests {
 
   @BeforeClass

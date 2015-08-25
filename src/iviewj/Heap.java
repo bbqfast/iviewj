@@ -79,32 +79,62 @@ public class Heap extends TestBase {
     Inorder(tr, idx * 2 + 1, space + " ");
   }
 
-  public void BulkInsert(Integer[] insertList) {
+  protected void BulkInsert(Integer[] insertList) {
     for (int i = 0; i < insertList.length; i++) {
       Insert(insertList[i]);
     }
   }
 
-  public void BulkDelete(Integer[] toDelete, Integer[][] deleted) {
-    deleted[0] = new Integer[toDelete.length];
-    for (int i = 0; i < toDelete.length; i++) {
+  protected void BulkDelete(int numToDelete, Integer[][] deleted) {
+    deleted[0] = new Integer[numToDelete];
+    for (int i = 0; i < numToDelete; i++) {
       int[] del = new int[1];
       this.Delete(del);
       deleted[0][i] = del[0];
     }
   }
 
+  private Integer[] GetHeap() // get a tight heap content wihtout space
+  {
+    Integer[] heap = new Integer[last+1];
+    for(int i=0;i<=last;i++)
+    {
+      heap[i] = tr[i];
+    }
+    return heap;
+  }
+  
   protected void TestInput(Integer[] input, Integer[] expected) {
     Init();
     w(Utils.PrintArray("Input: ", input));
     this.BulkInsert(input);
     this.printHeap();
     Integer[][] deleted = new Integer[1][1];
-    BulkDelete(input, deleted);
+    BulkDelete(input.length, deleted);
 
     verifier.Verify("Match", deleted[0], expected);
+  } 
+  
+  protected void TestInsert(Integer[] input, Integer[] expected) {
+    Init();
+    w(Utils.PrintArray("Input: ", input));
+    this.BulkInsert(input);
+    this.printHeap();
+    Integer[] actual = GetHeap();
+    verifier.Verify("Match", expected, actual);
   }
 
+  protected void TestDelete(Integer[] input, int numToDel, Integer[] expected) {
+    Init();
+    w(Utils.PrintArray("Input: ", input));
+    this.BulkInsert(input);
+    this.printHeap();
+    Integer[][] deleted = new Integer[1][1];
+    BulkDelete(numToDel, deleted);
+
+    verifier.Verify("Match", expected, GetHeap());
+  }  
+  
   public void Test1() {
     TestInput(new Integer[]{3, 2, 4, 7, 9, 1}, new Integer[]{1, 2, 3, 4, 7, 9});
     TestInput(new Integer[]{6, 3, 2, 4, 7, 5, 9, 1, 8}, new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9});

@@ -34,7 +34,9 @@ public class TestVerifier implements IVerifier {
         }
         else
         {
-            Fail();
+          w(Utils.PrintArray("actual", actual));
+          w(Utils.PrintArray("expect", expect));
+          Fail();
         }
     }
     
