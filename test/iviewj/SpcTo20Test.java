@@ -54,4 +54,12 @@ public class SpcTo20Test {
     System.out.println(TestHelper.getMethodName(2));
     instance.TestInput(" apple", "%20apple\0");
   }    
+  
+  @Test
+  public void syntax_plus() {
+    System.out.println(TestHelper.getMethodName(2));
+    int a=5, b=5;
+    System.out.println("a=" + a++);
+    System.out.println("b=" + ++b);
+  }     
 }
