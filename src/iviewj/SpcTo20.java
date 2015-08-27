@@ -2,16 +2,45 @@ package iviewj;
 
 import GDC.*;
 
-public class SpcTo20 {
+public class SpcTo20 extends TestBase {
+  
+  public SpcTo20(IVerifier v)
+  {
+    super(v);
+  }
 
-  public static void ReplaceFun(char[] str, int length) {
-    int spaceCount = 0, newLength, i = 0;
-    for (i = 0; i < length; i++) {
+  protected void TestInput(String str, String expect) {
+    String withSpc = fluffInput(str);
+    char[] strArray = withSpc.toCharArray();
+    ReplaceWith20(strArray, str.length(), withSpc.length() - 1);
+    verifier.Verify("insert %20", new String(expect), new String(strArray));
+  }  
+  
+  protected String fluffInput(String s)
+  {
+    int spc=0;
+    char[] str = s.toCharArray();
+    
+    for (int i = 0; i < s.length(); i++) {
       if (str[i] == ' ') {
-        spaceCount++;
+        spc++;
       }
     }
-    newLength = length + spaceCount * 2;
+    // get addition space
+    int add = spc * 2;
+    StringBuffer sb = new StringBuffer(s);
+    for(int i=0;i<add;i++)
+    {
+      sb.append(" ");
+    }
+
+    sb.append(" ");  // eof character
+    return sb.toString();
+  }
+  
+  public void ReplaceWith20(char[] str, int length, int newLength) {
+    int spaceCount = 0, i = 0;
+
     str[newLength] = '\0';
     for (i = length - 1; i >= 0; i--) {
       if (str[i] == ' ') {
@@ -25,4 +54,5 @@ public class SpcTo20 {
       }
     }
   }
+  
 }
