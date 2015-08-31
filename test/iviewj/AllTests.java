@@ -10,7 +10,7 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses(value = {AtoiTest.class, BinarySearchTest.class, BitCountingTest.class, FindShiftedArrayTest.class, LCATest.class, LinkListRemoveDupTest.class, MaxSumTest.class,
   PermutationTest.class, StrFindDuplicateTest.class, StrStrTest.class, BSTFromPreOrderTest.class, HeapTest.class, FindIslandTest.class, SpcTo20Test.class, CompressStrTest.class, 
-  MatrixRotateTest.class})
+  MatrixRotateTest.class, QueueWith2StacksTest.class})
 public class AllTests {
 
   @BeforeClass
