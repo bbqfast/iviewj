@@ -12,6 +12,7 @@ public class RevLinkList extends TestBase {
   // cursor
   // last - remember last node when cursor advance
   // next - remember next node when cur.next is twisted to point to last
+  // mistake:  tmp should assign to .next because .next will be modified
   public Node Reverse(Node head) {
     Node last = null;
     Node cur = head;

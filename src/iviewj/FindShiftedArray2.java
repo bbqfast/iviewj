@@ -22,7 +22,7 @@ public class FindShiftedArray2 extends FindShiftedArray {
         l = m + 1;
         continue;
       }
-      if (a[m] < a[l]) {
+      if (a[m] < a[l]) { // left
         mf = m - 1;
         h = m - 1;
         continue;

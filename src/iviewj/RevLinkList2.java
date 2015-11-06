@@ -8,22 +8,17 @@ public class RevLinkList2 extends RevLinkList {
     super(v);
   }
 
-    // use of 3 variable
-  // cursor
-  // last - remember last node when cursor advance
-  // next - remember next node when cur.next is twisted to point to last
   public Node Reverse(Node head) {
-    Node p = null;
-    Node t = null;
-    Node c = head;
-
-    // mistake:  tmp should assign to .next because .next will be modified
-    while (c != null) {
-      t = c.next;
-      c.next = p;
-      p = c;
-      c = t;
+    Node t, n=head, p=null;
+    
+    while (n != null)
+    {
+      t = n.next;
+      n.next = p;
+      p = n;
+      n = t;
     }
+    
     return p;
   }
 }
