@@ -2,6 +2,9 @@ package iviewj;
 
 import javax.management.OperationsException;
 import GDC.*;
+import iviewj.basic.MaxSum;
+import iviewj.basic.RevLinkList2;
+import iviewj.others.LongestCommonSubsequence;
 
 public class Main {
 
