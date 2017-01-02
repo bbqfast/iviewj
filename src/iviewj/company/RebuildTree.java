@@ -13,7 +13,12 @@ public class RebuildTree extends TestBase {
     super(v);
   }
 
-  public TNode Rebuild(int[] preArr, int pb, int pe, int[] inArr, int ib, int ie) {
+  public TNode Rebuild(Integer[] preArr, Integer[] inArr) {
+    //      Rebuild(preArr, 0, preArr.length - 1, inArr, 0, inArr.length - 1);
+    return Rebuild(preArr, 0,  preArr.length - 1, inArr, 0, inArr.length - 1);
+  }
+  
+  public TNode Rebuild(Integer[] preArr, int pb, int pe, Integer[] inArr, int ib, int ie) {
     int rootElem = preArr[pb];
     TNode newRoot = new TNode();
     newRoot.Data = preArr[pb];
@@ -33,7 +38,7 @@ public class RebuildTree extends TestBase {
     return newRoot;
   }
 
-  private int SplitInArr(int[] inArr, int ib, int ie, int midElem, int[] leftEnd, int[] rightStart) {
+  private int SplitInArr(Integer[] inArr, int ib, int ie, int midElem, int[] leftEnd, int[] rightStart) {
     int i = ib;
     for (i = ib; i <= ie; i++) {
       if (inArr[i] == midElem) {
@@ -75,8 +80,8 @@ public class RebuildTree extends TestBase {
         //int []preArr = {4,2,1,3,6,5,7};
     //int []inArr = {1,2,3,4,5,6,7};
 
-    int[] preArr = {4, 2, 1, 3, 8, 6, 5, 7, 9};
-    int[] inArr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    Integer[] preArr = {4, 2, 1, 3, 8, 6, 5, 7, 9};
+    Integer[] inArr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     RebuildTree rt = new RebuildTree(this.verifier);
     TNode root = rt.Rebuild(preArr, 0, preArr.length - 1, inArr, 0, inArr.length - 1);

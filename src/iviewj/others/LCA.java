@@ -50,7 +50,7 @@ public class LCA extends TestBase {
     }
   }
   
-  protected void TestInput(int[] inArr, int[] preArr, int left, int right, int expected) {
+  protected void TestInput(Integer[] inArr, Integer[] preArr, int left, int right, int expected) {
     RebuildTree rt = new RebuildTree(verifier);
     TNode root = rt.Rebuild(preArr, 0, preArr.length - 1, inArr, 0, inArr.length - 1);
     rt.Inorder(root, "");
@@ -61,8 +61,8 @@ public class LCA extends TestBase {
   }  
 
   public void Test1() {
-    int[] inArr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    int[] preArr = {4, 2, 1, 3, 8, 6, 5, 7, 9};
+    Integer[] inArr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    Integer[] preArr = {4, 2, 1, 3, 8, 6, 5, 7, 9};
     TestInput(inArr, preArr, 1, 3, 2);
     TestInput(inArr, preArr, 1, 9, 4);
     TestInput(inArr, preArr, 5, 9, 8);

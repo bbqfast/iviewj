@@ -27,8 +27,8 @@ public class BSTFromPreOrderTest {
   @Test
   public void testTestInput() {
     System.out.println(TestHelper.getMethodName(2));
-    int[] preArr = {4, 2, 1, 3, 8, 6, 5, 7, 9};
-    int[] inArr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    Integer[] preArr = {4, 2, 1, 3, 8, 6, 5, 7, 9};
+    Integer[] inArr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     RebuildTree rt = new RebuildTree(new TestVerifier());
     TNode root = rt.Rebuild(preArr, 0, preArr.length - 1, inArr, 0, inArr.length - 1);
     rt.Inorder(root, "");

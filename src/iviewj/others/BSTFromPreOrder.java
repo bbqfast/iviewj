@@ -12,7 +12,7 @@ public class BSTFromPreOrder extends TestBase {
     super(v);
   }
 
-  TNode constructTreeUtil(int pre[], int[] preIndex, int low, int high, int size) {
+  TNode constructTreeUtil(Integer pre[], int[] preIndex, int low, int high, int size) {
     // Base case
     if (preIndex[0] >= size || low > high) {
       return null;
@@ -44,13 +44,13 @@ public class BSTFromPreOrder extends TestBase {
     return root;
   }
 
-  TNode ConstructTree(int pre[], int size) {
+  public TNode ConstructTree(Integer pre[], int size) {
     int[] preIndex = new int[1];
     preIndex[0] = 0;
     return constructTreeUtil(pre, preIndex, 0, pre.length - 1, pre.length);
   }
 
-  public void TestInput(int[] preArr, TNode expected) {
+  public void TestInput(Integer[] preArr, TNode expected) {
 
     TNode nt = ConstructTree(preArr, preArr.length);
     verifier.Verify("Tree identical:", expected, nt);

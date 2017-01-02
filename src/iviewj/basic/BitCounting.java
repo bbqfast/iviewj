@@ -11,7 +11,7 @@ class BitCounting extends TestBase {
     super(v);
   }
 
-  public void TestInput(int n, int expected) {
+  public void TestInput(int n,  int expected) {
     int cnt = countBits(n);
     verifier.Verify("countBits", expected, cnt);
 

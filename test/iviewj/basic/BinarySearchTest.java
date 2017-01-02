@@ -13,14 +13,14 @@ import static iviewj.others.PermutationTest.getMethodName;
 import static org.junit.Assert.*;
 
 public class BinarySearchTest {
-  BinarySearch3 search;
+  BinarySearch2 search;
   
   public BinarySearchTest() {
   }
   
   @Before
   public void setUp() {
-    search = new BinarySearch3(new TestVerifier());
+    search = new BinarySearch2(new TestVerifier());
   }
 
   @Test

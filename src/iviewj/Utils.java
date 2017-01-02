@@ -131,16 +131,16 @@ public class Utils {
     }
     return buf.toString();
   }
-  
+
   public static String PrintArray(String desc, Point[] a) {
     StringBuilder buf = new StringBuilder();
     buf.append(desc + " ");
     for (int i = 0; i < a.length; i++) {
       String ps = "(" + a[i].x + "," + a[i].y + ")";
-      buf.append(ps  + ", ");
+      buf.append(ps + ", ");
     }
     return buf.toString();
-  }  
+  }
 
   public static void PrintLinkList(Node n) {
     // f("PrintLinkList");
@@ -162,8 +162,8 @@ public class Utils {
     if (n == null) {
       n[0] = new TNode(d);
     } else {
-      TNode[] left = new TNode[]{n[0].left};
-      TNode[] right = new TNode[]{n[0].right};
+      TNode[] left = new TNode[] { n[0].left };
+      TNode[] right = new TNode[] { n[0].right };
       if (d < n[0].Data) {
         Insert(left, d);
       } else {
@@ -212,20 +212,28 @@ public class Utils {
     System.out.println("---------- " + line + "-------------");
   }
 
-//
-//        public static Node ArrayToLinkList(int[] elements)
-//    {
-//        Node prev = new Node();
-//        Node head = prev;
-//        foreach (int e in elements)
-//        {
-//            Node n = new Node();
-//            n.data = e;
-//            prev.next = n;
-//            n.next = null;
-//            prev = n;
-//        }
-//        head = head.next;
-//        return head;
-//    }
+  public static void Inorder(TNode root, String space) {
+    if (root == null) {
+      return;
+    }
+    Inorder(root.left, space + " ");
+    w(space + root.Data);
+    Inorder(root.right, space + " ");
+  }
+  //
+  // public static Node ArrayToLinkList(int[] elements)
+  // {
+  // Node prev = new Node();
+  // Node head = prev;
+  // foreach (int e in elements)
+  // {
+  // Node n = new Node();
+  // n.data = e;
+  // prev.next = n;
+  // n.next = null;
+  // prev = n;
+  // }
+  // head = head.next;
+  // return head;
+  // }
 }
