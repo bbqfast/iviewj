@@ -28,7 +28,7 @@ public class FindIslandTest {
 
   @Before
   public void setUp() {
-    instance = new FindIsland(new TestVerifier());
+    instance = new FindIsland2(new TestVerifier());
   }
 
   private Integer[][] findAdjTestGrid() {
@@ -55,6 +55,18 @@ public class FindIslandTest {
     return g;
   }  
 
+  private Integer[][] sampleGrid3() {
+    List<String> sg = new ArrayList<String>();
+    sg.add("....o..........");
+    sg.add("...oooooooooooo");
+    sg.add("....ooo...ooooo");
+    sg.add("o.......o......");
+    sg.add("oo.....ooo.....");
+    sg.add("o.......o......");
+    Integer[][] g = new FindIsland(new TestVerifier()).ConvertToGrid(sg);
+    return g;
+  }
+  
   @Test
   public void testFindAdjMiddle() {
     System.out.println(TestHelper.getMethodName(2));
@@ -161,6 +173,13 @@ public class FindIslandTest {
     Integer[][] g = sampleGrid2();
     instance.TestNumIslands(g, 6);
   }      
+  
+  @Test
+  public void testNumIslands3() {
+    System.out.println(TestHelper.getMethodName(2));
+    Integer[][] g = sampleGrid3();
+    instance.TestNumIslands(g, 3);
+  }  
 
   public void markGrid(Integer[][] g, List<Point> pts) {
     for (Point x : pts) {

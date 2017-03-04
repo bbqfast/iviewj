@@ -9,7 +9,7 @@ public class CompressStr2 extends CompressStr {
   }  
   
   // this is a cleaner implementation
-  public char[] Compress(char a[])
+  public char[] Compress2(char a[])
   {
     if (a.length <= 0)
       return a;
@@ -35,5 +35,31 @@ public class CompressStr2 extends CompressStr {
     WriteInt(b, j, cnt);
     
     return b;
+  }  
+  
+  // this is a cleaner implementation
+  public char[] Compress(char a[])
+  {
+    if (a.length <= 0)
+      return a;
+//    char b[] = new char[a.length];
+    char lc=a[0];
+    Integer cnt=0;
+    String b = "";
+    
+    for (int i=0;i<=a.length;i++)
+    {
+      if (i != a.length && a[i] == lc) {
+        cnt++;
+        lc = a[i];
+      } else {
+        b = b + lc;
+        b = b + cnt.toString();
+        lc = a[i];
+        cnt = 1;
+      }
+    }
+     
+    return b.toCharArray();
   }  
 }
