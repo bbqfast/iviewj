@@ -10,6 +10,20 @@ public class BinarySearch extends TestBase {
     super(v);
   }
 
+  public void printm(int m, int s) {
+    StringBuffer sb = new StringBuffer();
+    for (int i=0;i<s;i++) {
+     sb.append(i); 
+    }
+    StringBuffer sb2 = new StringBuffer();
+    for (int i=0;i<m;i++) {
+      sb2.append(" "); 
+     }
+    sb2.append("m");
+    System.out.println(sb.toString());
+    System.out.println(sb2.toString());
+  }
+  
   protected void TestInput(Integer[] input, int find, int expected) {
     w(Utils.PrintArray("Input:", input));
     w(" Search for " + find);

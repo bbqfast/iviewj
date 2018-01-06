@@ -6,6 +6,8 @@ import java.util.HashMap;
 
 public class Football2 {
   HashMap<Integer, String> scoreMap;
+  HashMap<Integer, Integer> stats = new HashMap<>();
+  
 
   public Football2() {
     scoreMap = new HashMap<Integer, String>();
@@ -15,6 +17,12 @@ public class Football2 {
     scoreMap.put(7, "Touchdown, 1 Extra Point");
     scoreMap.put(8, "Touchdown, Two-Point Conversion");
   }  
+  
+  private void addstat(Integer s) {
+    if (stats.containsKey(s)) 
+      stats.put(s, stats.get(s) + 1);
+    
+  }
   
   public ArrayList<String> possibleScore(int s)
   {

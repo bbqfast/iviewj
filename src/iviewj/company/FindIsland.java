@@ -51,11 +51,11 @@ public class FindIsland extends TestBase {
     Queue<Point> q = new LinkedList<Point>();
     q.add(new Point(x, y));
     // main loop
-    while (q.size() != 0) {
-      Point r = q.remove();
-      g[r.x][r.y] = MARK;
-      List<Point> adjs = FindAdj(g, r.x, r.y);
-      for (Point e : adjs) {
+      while (q.size() != 0) {
+        Point r = q.remove();
+        g[r.x][r.y] = MARK;
+        List<Point> adjs = FindAdj(g, r.x, r.y);
+        for (Point e : adjs) {
         q.add(e);
       }
     }
